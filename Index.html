@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+<input type="file" id="files" accept="text/*" multiple />
+<script>
+function printFiles(e) {  
+    const files = e.target.files;   // получаем все выбранные файлы
+    for (file of files) {        // Перебираем все выбранные файлы 
+        // создаем объект FileReader для считывания файла
+        const reader = new FileReader();  
+        // при успешном чтении файла выводим его содержимое на веб-страницу
+        reader.onload = () => {  
+            // выводим содержимое
+            console.log(reader.result);
+            // для разделения, если выбрано несколько файлов
+            console.log("==============================");
+        };      
+         // считываем файл
+        reader.readAsText(file);       
+    }
+}
+document.getElementById("files").addEventListener("change", printFiles);
+</script>
+</body>
+</html>
