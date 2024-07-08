@@ -1,12 +1,30 @@
-<select id="countries">
-    <option disabled>Выберите страну</option>
-</select>
-<script type="text/javascript">
-$(function(){
-    $.getJSON('countries.json', function(data) {
-                $.each(data, function(key, val) {
-                    $('#countries').append('<option value="' + val + '">' + key + '</option>');
-                });
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphs and Diagrams Example</title>
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <select id="countries">
+        <option disabled>Выберите страну</option>
+    </select>
+    <script type="text/javascript">
+    $(function(){
+        $.getJSON('countries.json', function(data) {
+                    $.each(data, function(key, val) {
+                        $('#countries').append('<option value="' + val + '">' + key + '</option>');
+                    });
+        });
     });
-});
-</script>
+    </script>
+</body>
+</html>
