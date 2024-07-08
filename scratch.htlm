@@ -1,0 +1,12 @@
+<select id="countries">
+    <option disabled>Выберите страну</option>
+</select>
+<script type="text/javascript">
+$(function(){
+    $.getJSON('countries.json', function(data) {
+                $.each(data, function(key, val) {
+                    $('#countries').append('<option value="' + val + '">' + key + '</option>');
+                });
+    });
+});
+</script>
