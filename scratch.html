@@ -18,13 +18,17 @@
         <option disabled>Выберите страну</option>
     </select>
     <script type="text/javascript">
-    $(function(){
-        $.getJSON('countries.json', function(data) {
-                    $.each(data, function(key, val) {
-                        $('#countries').append('<option value="' + val + '">' + key + '</option>');
-                    });
-        });
-    });
+
+        fetch(ddd)
+            .then((response) => response.json())
+            .then((json) => (data = json));
+        
+        for(state in data){
+            var option = document.createElement("option");
+            option.text = state;
+            option.value = data[state];
+            document.getElementById('countries').appendChild(option)
+        }
     </script>
 </body>
 </html>
