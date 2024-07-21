@@ -34,8 +34,8 @@
         import data from './data.json' assert { type: 'json' };
         console.log(data);
 
-        var data1 = data
-        console.log(data1)
+
+        
         /*data = '[{"name" : "Ashwin", "age" : "20"},{"name" : "Abhinandan", "age" : "20"}]'
         var mydata = JSON.parse(data)
         document.getElementById('someText').textContent = mydata[1].name*/
@@ -77,15 +77,8 @@
             }
         };
 
-        /*console.log(barChartConfig.data.datasets[1].data)*/
-        barChartConfig.data.datasets[2] = {
-                    label: 'Monthly Sales',
-                    data: [1, 13, 23, 34, 55, 11, 57],
-                    backgroundColor: 'rgba(99, 255, 132, 0.8)',
-                    borderColor: 'rgba(0, 99, 132, 1)',
-                    borderWidth: 1
-                }
-
+        console.log(barChartConfig)
+        
         const lineChartConfig = {
             type: 'line',
             data: {
